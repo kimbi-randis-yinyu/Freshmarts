@@ -1,0 +1,16 @@
+# Sensitive / local
+config/db.php
+uploads/avatars/*
+!uploads/avatars/.gitkeep
+uploads/products/*
+!uploads/products/.gitkeep
+uploads/favicon_*
+uploads/og_*
+schema.sql
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
