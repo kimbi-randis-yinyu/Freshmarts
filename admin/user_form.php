@@ -11,7 +11,7 @@ $user = [
 ];
 
 if ($editing) {
-    $stmt = $pdo->prepare('SELECT id, name, email, role, avatar FROM users WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT id, name, email, role FROM users WHERE id = ?');
     $stmt->execute([(int) $_GET['id']]);
     $row = $stmt->fetch();
     if (!$row) {
@@ -61,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         $ext = match ($mime) {
-            'image/jpeg' => 'jpg',
-            'image/png'  => 'png',
-            default      => 'webp',
+            'image/jpeg'
+             
+            
         };
         $filename = 'avatar_' . bin2hex(random_bytes(6)) . '.' . $ext;
         $destDir = __DIR__ . '/../uploads/avatars/';
